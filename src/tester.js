@@ -10,7 +10,7 @@ const main = async () => {
 
     const data = await parseRom(stream);
 
-    console.log(JSON.stringify(data, null, 2));
+    console.log(JSON.stringify(data.shops, null, 2));
 };
 
 main().then(() => process.exit(0)).catch((e) => { console.error(e); process.exit(1); });

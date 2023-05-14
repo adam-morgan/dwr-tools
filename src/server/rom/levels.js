@@ -13,7 +13,6 @@ const readLevels = (data) => {
             if (spellFlag & (1 << (j + 8) % 16)) {
                 spells.push(SPELLS[j]);
             }
-            // stats->spells |= 1 << (j + 8) % 16;
         }
 
         levels.push({

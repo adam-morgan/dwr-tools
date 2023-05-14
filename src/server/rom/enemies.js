@@ -1,6 +1,6 @@
 'use strict';
 
-const { ENEMY_LIST, ENEMIES } = require('./constants');
+const { ENEMY_LIST, ENEMIES, SPIKES } = require('./constants');
 
 const readEnemies = (data) => {
     const enemies = [];
@@ -80,6 +80,15 @@ const readEnemies = (data) => {
     return enemies;
 };
 
+const readSpikes = (data) => {
+    return {
+        HAUKSNESS: ENEMY_LIST[data.readUInt8(SPIKES) + 32],
+        SWAMP_CAVE: ENEMY_LIST[data.readUInt8(SPIKES) + 33],
+        CHARLOCK: ENEMY_LIST[data.readUInt8(SPIKES) + 34]
+    };
+};
+
 module.exports = exports = {
-    readEnemies
+    readEnemies,
+    readSpikes
 };

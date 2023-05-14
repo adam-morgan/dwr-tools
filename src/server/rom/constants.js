@@ -101,6 +101,27 @@ module.exports = exports = {
         'ERDRICKS_CAVE_2'
     ],
     SEARCH_ITEMS: 0x1e136 + CONTENT_OFFSET,
+    SHOPS: 0x1991 + CONTENT_OFFSET,
+    SHOP_END: 0xfd,
+    SHOP_ITEMS: [
+        'BAMBOO_POLE',
+        'CLUB',
+        'COPPER_SWORD',
+        'HAND_AXE',
+        'BROAD_SWORD',
+        'FLAME_SWORD',
+        'ERDRICKS_SWORD',
+        'CLOTHES',
+        'LEATHER_ARMOR',
+        'CHAIN_MAIL',
+        'HALF_PLATE',
+        'FULL_PLATE',
+        'MAGIC_ARMOR',
+        'ERDRICKS_ARMOR',
+        'SMALL_SHIELD',
+        'LARGE_SHIELD',
+        'SILVER_SHIELD'
+    ],
     SPELLS: [
         'HEAL',
         'HURT',
@@ -113,6 +134,7 @@ module.exports = exports = {
         'HEALMORE',
         'HURTMORE'
     ],
+    SPIKES: 0x1cd7a + CONTENT_OFFSET,
     STATS: 0x60cd + CONTENT_OFFSET,
     WARPS: [
         'GARINHAM',
