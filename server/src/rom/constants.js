@@ -1,5 +1,3 @@
-'use strict';
-
 const CONTENT_OFFSET = 0x10;
 
 module.exports = exports = {

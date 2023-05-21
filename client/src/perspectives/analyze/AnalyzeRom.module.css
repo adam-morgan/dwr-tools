@@ -1,0 +1,10 @@
+.analyzeRom {
+    display: grid;
+    grid-row-gap: 20px;
+    justify-content: center;
+
+    .title {
+        font-family: 'Warrior Quest';
+        text-align: center;
+    }
+}

@@ -1,22 +1,20 @@
-'use strict';
-
 const { SHOPS, SHOP_END, SHOP_ITEMS } = require('./constants');
 
 const readShops = (data) => {
     const shopIndexes = {
-        'KOL': 0,
-        'BRECCONARY': 1,
-        'GARINHAM': 2,
-        'CANTLIN_1': 3,
-        'CANTLIN_2': 4,
-        'CANTLIN_3': 5,
-        'RIMULDAR': 6
+        KOL: 0,
+        BRECCONARY: 1,
+        GARINHAM: 2,
+        CANTLIN_1: 3,
+        CANTLIN_2: 4,
+        CANTLIN_3: 5,
+        RIMULDAR: 6
     };
 
     const shops = {};
     let ptr = SHOPS;
 
-    for (const [shopName, i] of Object.entries(shopIndexes)) {
+    for (const shopName of Object.keys(shopIndexes)) {
         const items = [];
 
         while (true) {

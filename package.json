@@ -1,0 +1,19 @@
+{
+    "name": "dwr-tools",
+    "version": "1.0.0",
+    "description": "Dragon Warrior Randomizer Tools",
+    "scripts": {},
+    "devDependencies": {
+        "eslint": "^8.40.0"
+    },
+    "engines": {
+        "node": ">=20"
+    },
+    "private": true,
+    "workspaces": {
+        "packages": [
+            "client",
+            "server"
+        ]
+    }
+}

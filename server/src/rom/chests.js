@@ -1,5 +1,3 @@
-'use strict';
-
 const {
     CHESTS,
     CHEST_CONTENTS,
@@ -34,7 +32,8 @@ const readSearchItems = (data) => {
         const y = data.readUInt8(SEARCH_ITEMS + 6 + i);
         const item = CHEST_CONTENTS[data.readUInt8(SEARCH_ITEMS + 9 + i)];
 
-        let dx, dy;
+        let dx;
+        let dy;
 
         if (map === 'OVERWORLD') {
             const tantegelIdx = WARPS.findIndex((w) => w === 'TANTEGEL');

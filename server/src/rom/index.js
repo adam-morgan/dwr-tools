@@ -1,5 +1,3 @@
-'use strict';
-
 const { readChests, readSearchItems } = require('./chests');
 const { readEnemies, readSpikes } = require('./enemies');
 const { readLevels } = require('./levels');

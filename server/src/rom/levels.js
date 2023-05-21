@@ -1,5 +1,3 @@
-'use strict';
-
 const { SPELLS, STATS } = require('./constants');
 
 const readLevels = (data) => {

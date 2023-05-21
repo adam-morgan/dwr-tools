@@ -1,5 +1,3 @@
-'use strict';
-
 const { ENEMY_LIST, ENEMIES, SPIKES } = require('./constants');
 
 const readEnemies = (data) => {
@@ -74,7 +72,7 @@ const readEnemies = (data) => {
             move1,
             move2Percent,
             move2
-        })
+        });
     }
 
     return enemies;

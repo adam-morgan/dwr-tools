@@ -1,0 +1,19 @@
+.home {
+    display: grid;
+    justify-content: center;
+    padding: 20px;
+
+    .cardNav {
+        display: grid;
+        grid-template-columns: 275px 275px;
+        grid-gap: 20px;
+
+        @media only screen and (max-width: 600px) {
+            grid-template-columns: auto;
+
+            .card {
+                height: unset;
+            }
+        }
+    }
+}
