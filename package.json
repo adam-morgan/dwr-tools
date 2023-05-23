@@ -1,5 +1,5 @@
 {
-    "name": "dwr-tools",
+    "name": "@dwr-tools/main",
     "version": "1.0.0",
     "description": "Dragon Warrior Randomizer Tools",
     "scripts": {},

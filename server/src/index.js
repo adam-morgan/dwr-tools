@@ -6,6 +6,10 @@ const PORT = parseInt(process.env.PORT ?? '3004', 10);
 
 const server = fastify();
 
+server.addContentTypeParser('*', { parseAs: 'buffer' }, (req, body, done) => {
+    done(null, body);
+});
+
 initializeRoutes(server);
 
 const init = async () => {

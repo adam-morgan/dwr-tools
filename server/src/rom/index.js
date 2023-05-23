@@ -3,10 +3,13 @@ const { readEnemies, readSpikes } = require('./enemies');
 const { readLevels } = require('./levels');
 const { readShops } = require('./shops');
 
-const parseRom = async (stream) => {
+const parseRomFromStream = async (stream) => {
     const arr = await stream.toArray();
     const romBuffer = Buffer.concat(arr);
+    return parseRomFromBuffer(romBuffer);
+};
 
+const parseRomFromBuffer = (romBuffer) => {
     return {
         chests: readChests(romBuffer),
         enemies: readEnemies(romBuffer),
@@ -18,5 +21,6 @@ const parseRom = async (stream) => {
 };
 
 module.exports = exports = {
-    parseRom
+    parseRomFromBuffer,
+    parseRomFromStream
 };

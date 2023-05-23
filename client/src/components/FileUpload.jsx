@@ -1,24 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { FileUploader } from 'react-drag-drop-files';
 
-import Button from '../button/Button';
-
-import styles from './FileUpload.module.css';
+import styles from './styles/FileUpload.module.css';
 
 const FileUpload = (props) => {
-    const [file, setFile] = useState(null);
-
     let text = props.text;
-    if (file) {
-        text = file.name;
+    if (props.file) {
+        text = props.file.name;
     }
 
     return (
         <section className={styles.fileUploadWrapper}>
             <section className={styles.fileUpload}>
                 <FileUploader
-                    handleChange={(file) => setFile(file)}
+                    handleChange={(file) => props.fileChanged(file)}
                     name="file"
                     multiple={false}
                 >
@@ -28,22 +24,14 @@ const FileUpload = (props) => {
                     </section>
                 </FileUploader>
             </section>
-            {file ?
-                (
-                    <Button
-                        text="Upload and Analyze"
-                        onAction={() => {
-                            // TODO
-                        }}
-                    />
-                ) :
-                null}
         </section>
     );
 };
 
 FileUpload.propTypes = {
-    text: PropTypes.string
+    text: PropTypes.string,
+    file: PropTypes.object,
+    fileChanged: PropTypes.func
 };
 
 FileUpload.defaultProps = {

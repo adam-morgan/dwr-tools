@@ -1,14 +1,15 @@
 {
-  "name": "dwr-tools-client",
+  "name": "@dwr-tools/client",
   "description": "Dragon Warrior Randomizer Tools - Client",
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --force",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@dwr-tools/common": "*",
     "@reduxjs/toolkit": "^1.8.1",
     "prop-types": "^15.8.1",
     "react": "^18.0.0",
