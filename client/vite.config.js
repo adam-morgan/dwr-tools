@@ -10,7 +10,7 @@ export default defineConfig({
         }
     },
     optimizeDeps: {
-        include: ['@dwr-tools/common']
+        // include: ['@dwr-tools/common']
     },
     plugins: [react()],
     server: {
