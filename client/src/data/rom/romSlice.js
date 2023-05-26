@@ -5,6 +5,10 @@ export const setActiveRom = (activeRom) => ({
     activeRom
 });
 
+export const getActiveRom = () => (state) => {
+    return state.rom?.activeRom;
+};
+
 export const setActiveRomFile = (file) => async (dispatch) => {
     const response = await fetch(
         '/api/rom/analyze',

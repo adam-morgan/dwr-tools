@@ -1,6 +1,9 @@
 const CONTENT_OFFSET = 0x10;
 
 module.exports = exports = {
+    DETAILS_FLAGS: 0x3f5e + CONTENT_OFFSET,
+    DETAILS_SEED: 0x3f99 + CONTENT_OFFSET,
+    DETAILS_VERSION: 0x3f42 + CONTENT_OFFSET,
     CHESTS: 0x5dcd + CONTENT_OFFSET,
     CHEST_CONTENTS: [
         'NONE',

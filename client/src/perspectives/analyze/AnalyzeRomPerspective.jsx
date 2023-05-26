@@ -1,16 +1,25 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Button from '../../components/Button';
 import FileUpload from '../../components/FileUpload';
 
-import { setActiveRomFile } from '../../data/rom/romSlice';
+import { getActiveRom, setActiveRomFile } from '../../data/rom/romSlice';
 
-import styles from './AnalyzeRom.module.css';
+import RomViewer from './rom/RomViewer';
+
+import styles from './AnalyzeRomPerspective.module.css';
 
 const AnalyzeRom = () => {
     const dispatch = useDispatch();
     const [file, setFile] = useState(null);
+    const activeRom = useSelector(getActiveRom());
+
+    if (activeRom != null) {
+        return (
+            <RomViewer rom={activeRom} />
+        );
+    }
 
     return (
         <section className={styles.analyzeRom}>

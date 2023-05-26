@@ -1,3 +1,4 @@
+const { readDetails } = require('./details');
 const { readChests, readSearchItems } = require('./chests');
 const { readEnemies, readSpikes } = require('./enemies');
 const { readLevels } = require('./levels');
@@ -11,6 +12,7 @@ const parseRomFromStream = async (stream) => {
 
 const parseRomFromBuffer = (romBuffer) => {
     return {
+        romDetails: readDetails(romBuffer),
         chests: readChests(romBuffer),
         enemies: readEnemies(romBuffer),
         spikes: readSpikes(romBuffer),

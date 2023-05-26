@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 
 import Home from './perspectives/home/Home';
-import AnalyzeRom from './perspectives/analyze/AnalyzeRom';
+import AnalyzeRomPerspective from './perspectives/analyze/AnalyzeRomPerspective';
 
 import './App.css';
 
@@ -17,7 +17,7 @@ const router = createBrowserRouter([
     },
     {
         path: '/analyze',
-        element: <AnalyzeRom />
+        element: <AnalyzeRomPerspective />
     },
     {
         path: '*',
