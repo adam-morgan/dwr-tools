@@ -101,6 +101,8 @@ module.exports = exports = {
         'ERDRICKS_CAVE',
         'ERDRICKS_CAVE_2'
     ],
+    MAP_ENCODED: 0x1d5d + CONTENT_OFFSET,
+    MAP_POINTERS: 0x2653 + CONTENT_OFFSET,
     SEARCH_ITEMS: 0x1e136 + CONTENT_OFFSET,
     SHOPS: 0x1991 + CONTENT_OFFSET,
     SHOP_END: 0xfd,

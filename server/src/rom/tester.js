@@ -8,7 +8,7 @@ const main = async () => {
 
     const data = await parseRomFromStream(stream);
 
-    console.log(JSON.stringify(data.romDetails, null, 2));
+    console.log(JSON.stringify(data.maps.overworld.tiles, null, 0));
 };
 
 main().then(() => process.exit(0)).catch((e) => { console.error(e); process.exit(1); });

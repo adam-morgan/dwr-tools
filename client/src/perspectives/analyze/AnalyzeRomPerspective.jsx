@@ -6,7 +6,7 @@ import FileUpload from '../../components/FileUpload';
 
 import { getActiveRom, setActiveRomFile } from '../../data/rom/romSlice';
 
-import RomViewer from './rom/RomViewer';
+import RomViewer from './romViewer/RomViewer';
 
 import styles from './AnalyzeRomPerspective.module.css';
 
