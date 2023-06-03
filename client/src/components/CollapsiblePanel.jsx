@@ -16,6 +16,8 @@ const CollapsiblePanel = (props) => {
     return (
         <Collapsible
             classParentString={styles.collapsible}
+            className={props.className}
+            openedClassName={props.className}
             triggerClassName={`${styles.collapsibleTitle} ${styles.collapsibleTitleClosed}`}
             triggerOpenedClassName={`${styles.collapsibleTitle} ${styles.collapsibleTitleOpened}`}
             contentInnerClassName={styles.collapsibleContent}
@@ -30,6 +32,7 @@ const CollapsiblePanel = (props) => {
 
 CollapsiblePanel.propTypes = {
     title: PropTypes.string,
+    className: PropTypes.string,
     children: PropTypes.element,
     open: PropTypes.bool
 };

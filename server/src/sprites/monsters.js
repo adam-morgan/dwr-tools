@@ -4,9 +4,10 @@ const sharp = require('sharp');
 
 const MONSTER_COORDS = {
     werewolf: [98, 301, 44, 42],
+    stoneman: [104, 454, 47, 47],
     armored_knight: [108, 399, 50, 52],
     red_dragon: [117, 504, 60, 41],
-    dl2: [64, 547, 74, 92]
+    dragonlord_2: [64, 547, 74, 92]
 };
 
 const loadMonsterSprite = async (monster, sharpProcessor) => {

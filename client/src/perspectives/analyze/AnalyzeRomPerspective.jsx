@@ -16,6 +16,7 @@ const AnalyzeRom = () => {
     const activeRom = useSelector(getActiveRom());
 
     if (activeRom != null) {
+        console.log(activeRom);
         return (
             <RomViewer rom={activeRom} />
         );

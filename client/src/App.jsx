@@ -32,7 +32,7 @@ const App = () => {
         <div className="app">
             <a href="/">
                 <header className="app-header">
-                    <img alt="DWR Tools" src="/api/sprites/monsters/dl2" />
+                    <img alt="DWR Tools" src="/api/sprites/monsters/dragonlord_2" />
                     Dragon Warrior Randomizer Tools
                 </header>
             </a>

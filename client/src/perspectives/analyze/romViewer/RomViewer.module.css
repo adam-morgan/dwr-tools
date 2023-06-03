@@ -1,5 +1,60 @@
+.romViewer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+}
+
+.romViewer .map {
+    grid-row: 1 / span 3;
+    height: min-content;
+}
+
+@media only screen and (max-width: 992px) {
+    .romViewer {
+        grid-template-columns: auto;
+    }
+
+    .romViewer .map {
+        grid-row: 2;
+    }
+}
+
 .romDetails {
     display: grid;
     grid-template-columns: min-content 1fr;
     grid-gap: 5px;
+}
+
+.romInfoSections {
+    display: grid;
+    grid-gap: 5px;
+}
+
+.encounterSpikes {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-gap: 5px;
+    align-items: center;
+}
+
+.levels table {
+    width: 100%;
+}
+
+.levels table, tr, th, td {
+    border: 1px solid #aaa;
+    border-collapse: collapse;
+    padding: 3px;
+}
+
+.levels table thead th {
+    text-align: start;
+}
+
+.generalLabel {
+    white-space: nowrap;
+}
+
+.leafletMap {
+    height: 600px;
 }

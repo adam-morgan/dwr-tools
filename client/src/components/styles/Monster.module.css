@@ -1,0 +1,23 @@
+.monster {
+    display: flex;
+    width: 75px;
+
+    &.bordered {
+        border: 1px solid #aaa;
+        padding: 5px;
+    }
+}
+
+.monsterInner {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    font-size: 12px;
+    width: 100%;
+}
+
+.monsterInner img {
+    width: 50px;
+    margin-bottom: 2px;
+}

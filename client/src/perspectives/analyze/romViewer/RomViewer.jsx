@@ -3,21 +3,30 @@ import PropTypes from 'prop-types';
 
 import CollapsiblePanel from '../../../components/CollapsiblePanel';
 
+import RomDetails from './RomDetails';
+import Map from './Map';
+import EncounterSpikes from './EncounterSpikes';
+import Levels from './Levels';
+
 import styles from './RomViewer.module.css';
 
 const RomViewer = (props) => {
     return (
         <div className={styles.romViewer}>
             <CollapsiblePanel title="ROM Details" open>
-                <div className={styles.romDetails}>
-                    <span>Version:</span>
-                    <span>{props.rom.romDetails.version}</span>
-                    <span>Flags:</span>
-                    <span>{props.rom.romDetails.flags}</span>
-                    <span>Seed:</span>
-                    <span>{props.rom.romDetails.seed}</span>
-                </div>
+                <RomDetails rom={props.rom} />
             </CollapsiblePanel>
+            <CollapsiblePanel title="Map" className={styles.map} open>
+                <Map rom={props.rom} mapName="overworld" />
+            </CollapsiblePanel>
+            <div className={styles.romInfoSections}>
+                <CollapsiblePanel title="Encounter Spikes">
+                    <EncounterSpikes rom={props.rom} />
+                </CollapsiblePanel>
+                <CollapsiblePanel title="Levels">
+                    <Levels rom={props.rom} />
+                </CollapsiblePanel>
+            </div>
         </div>
     );
 };
