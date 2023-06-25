@@ -4,6 +4,7 @@ const { readEnemies, readSpikes } = require('./enemies');
 const { readLevels } = require('./levels');
 const { readShops } = require('./shops');
 const { readMaps } = require('./maps');
+const { readLocations } = require('./locations');
 
 const parseRomFromStream = async (stream) => {
     const arr = await stream.toArray();
@@ -20,7 +21,8 @@ const parseRomFromBuffer = (romBuffer) => {
         levels: readLevels(romBuffer),
         searchItems: readSearchItems(romBuffer),
         shops: readShops(romBuffer),
-        maps: readMaps(romBuffer)
+        maps: readMaps(romBuffer),
+        locations: readLocations(romBuffer)
     };
 };
 

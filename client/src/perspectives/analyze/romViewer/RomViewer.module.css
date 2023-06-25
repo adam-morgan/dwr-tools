@@ -27,13 +27,20 @@
 
 .romInfoSections {
     display: grid;
-    grid-gap: 5px;
+    grid-gap: 10px;
 }
 
 .encounterSpikes {
     display: grid;
     grid-template-columns: min-content 1fr;
-    grid-gap: 5px;
+    grid-gap: 10px;
+    align-items: center;
+}
+
+.importantItems {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-gap: 10px;
     align-items: center;
 }
 
@@ -49,6 +56,27 @@
 
 .levels table thead th {
     text-align: start;
+}
+
+.locations {
+    display: grid;
+    grid-gap: 10px;
+}
+
+.locations .locationSection {
+    display: grid;
+    grid-gap: 5px;
+}
+
+.locations .locationSection .locationSectionBody {
+    margin-left: 25px;
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-column-gap: 10px;
+}
+
+.locationLink {
+    cursor: pointer;
 }
 
 .generalLabel {

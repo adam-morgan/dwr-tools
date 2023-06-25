@@ -1,0 +1,64 @@
+.popup {
+    background: #fff;
+    color: #333;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.4);
+    border-radius: 12px;
+    text-align: left;
+    position: relative;
+    font-size: 13px;
+}
+
+.arrow, .arrow::before {
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    background: inherit;
+    transition: top 0.3s ease-in, bottom 0.3s ease-in, left 0.3s ease-in,
+      right 0.3s ease-in;
+}
+
+.arrow {
+    visibility: hidden;
+}
+
+.arrow::before {
+    content: "";
+    transform: rotate(45deg);
+    visibility: visible;
+}
+
+.popup[data-popper-placement^="bottom"] > .arrow {
+    top: -4px;
+}
+
+.popup[data-popper-placement^="top"] > .arrow {
+    bottom: -4px;
+}
+
+.popup[data-popper-placement^="left"] > .arrow {
+    right: -4px;
+}
+
+.popup[data-popper-placement^="right"] > .arrow {
+    left: -4px;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+    font: 16px/24px Tahoma, Verdana, sans-serif;
+    color: #757575;
+    width: 24px;
+    height: 24px;
+}
+
+.close:hover {
+    color: #585858;
+    cursor: pointer;
+}
+
+.content {
+    margin: 13px 24px 13px 20px;
+}

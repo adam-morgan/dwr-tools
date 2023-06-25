@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import { MapContainer, ImageOverlay } from 'react-leaflet';
-import { CRS } from 'leaflet';
+import {
+    ImageOverlay,
+    MapContainer,
+    Marker,
+    Popup
+} from 'react-leaflet';
+
+import { CRS, divIcon } from 'leaflet';
 
 import 'leaflet/dist/leaflet.css';
 
@@ -43,10 +49,9 @@ const Map = (props) => {
     const layers = [];
 
     const bounds = [[0, 0], [120 * 16, 120 * 16]];
-    const center = [
-        Math.floor((bounds[1][0] - bounds[0][0]) / 2),
-        Math.floor((bounds[1][1] - bounds[0][1]) / 2)
-    ];
+
+    const { x: centerX, y: centerY } = props.rom.locations.TANTEGEL;
+    const center = tileToMapCoords([centerX, centerY]);
 
     if (mapData) {
         const imageUrl = `data:image/png;base64, ${mapData}`;
@@ -70,8 +75,48 @@ const Map = (props) => {
             scrollWheelZoom={false}
         >
             {layers}
+            {createMarkers(props.rom)}
         </MapContainer>
     );
+};
+
+const createMarkers = (rom) => {
+    const markers = [];
+
+    for (const [l, def] of Object.entries(rom.locations)) {
+        if (def.map === 'OVERWORLD') {
+            markers.push((
+                <Marker
+                    position={tileToMapCoords([def.x, def.y])}
+                    icon={divIcon({
+                        className: 'leaflet-mouse-marker',
+                        iconAnchor: [8, 8],
+                        iconSize: [16, 16]
+                    })}
+                >
+                    <Popup>
+                        {l}
+                    </Popup>
+                </Marker>
+            ));
+        }
+    }
+
+    return markers;
+};
+
+const tileToMapCoords = (tileCoords) => {
+    return imgToMapCoords([
+        (tileCoords[0] * 16) + 8,
+        (tileCoords[1] * 16) + 8
+    ]);
+};
+
+const imgToMapCoords = (imgCoords) => {
+    return [
+        (120 * 16) - imgCoords[1],
+        imgCoords[0]
+    ];
 };
 
 Map.propTypes = {
